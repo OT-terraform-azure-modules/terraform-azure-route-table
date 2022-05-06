@@ -24,7 +24,7 @@ Usage
 
 ```hcl
 module "res_group" {
-  source                  = "git::git@gitlab.com:ot-azure/terraform/rg.git"
+  source                  = "OT-terraform-azure-modules/resource-group/azure"
   resource_group_name     = ""
   resource_group_location = ""
   lock_level_value        = ""
@@ -34,7 +34,7 @@ module "res_group" {
 }
 
 module "route_table_module" {
-source                         = "git::git@gitlab.com:ot-azure/terraform/route_tables.git?ref=kritarth"
+source                         = "OT-terraform-azure-modules/route-table/azure"
 route_table_name               = "_"
 route_table_location           = module.res_group.resource_group_location
 resource_group_name            = module.res_group.resource_group_name
